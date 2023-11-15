@@ -18,8 +18,14 @@ class Imc{
         return this.poids/(this.taille*this.taille);
     }
     display(){
-        console.log(this.nom + " Il pèse " +this.poids + "kg" + " il fait "+this.taille + "cm est son IMC est de " + this.calculImc().toFixed(2));
+        console.log(this.nom + " Il pèse " + this.poids + "kg" + " il fait "+ this.taille + "cm est son IMC est de " + this.calculImc().toFixed(2));
     }
 }
 const mat = new Imc('mat',67,1.69);
 mat.display();
+const listImc = [];
+const marie = new Imc('marie',60,1.65);
+listImc.push(marie);
+listImc.push(mat)
+
+console.log(listImc);
