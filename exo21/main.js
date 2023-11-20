@@ -4,7 +4,11 @@ function calculer(){
 let total = 0;
 
 //test si nombre est inférieur ou égal à 10
-if(nombre <=10 && nombre >0){
+if(nombre == "" || nombre == 0)  {
+  //Afficher dans le paragraphe "Veuillez choisir un nombre de chocolatine"
+ total = 'Veuillez choisir un nombre de chocolatine';
+}
+else if(nombre <=10 && nombre >0){
     total = nombre * 1.4;
 }
 //test si nombre est inférieur ou égal à 20
@@ -23,6 +27,10 @@ else if(nombre >20){
 else{
     total = "Saisir un nombre positif";
 }
+
 //version avec isNaN (test si ce n'est pas un nombre )
-console.log(!isNaN(total)?"Le prix total est égal à "+total.toFixed(2)+" €":total);
+const cal= document.querySelector('#resultat').textContent = 
+(!isNaN(total)?"Le prix total est égal à "+total.toFixed(2)+" €":total);
 }
+
+
