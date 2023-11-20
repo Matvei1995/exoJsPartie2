@@ -20,3 +20,4 @@ h1.textContent = "Nouveau titre";
 
 // Remplacer le contenu du paragraphe
 p.textContent = "Nouveau contenu du paragraphe.";
+
