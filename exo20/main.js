@@ -9,6 +9,8 @@ const user = {
   const nom1 = document.querySelector("div p");
   const prenom1 = document.querySelector(".prenom");
   const age1 = document.querySelector(".age");
+  
+//voir nth-child//
 
 // Ajout de user id
   document.querySelector("div").setAttribute("id",user.id);
