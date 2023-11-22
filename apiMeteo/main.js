@@ -16,8 +16,9 @@ const url = "https://api.openweathermap.org/data/2.5/weather?lon=1.44&lat=43.6&a
                     .then((res) => res.json())
                         
                     .then((data) => {
-
-                        displayMeteo(data)                        
+                            console.log(data);
+                             displayMeteo(data);
+                                             
                     })
 
                function displayMeteo(data) {
@@ -26,9 +27,11 @@ const url = "https://api.openweathermap.org/data/2.5/weather?lon=1.44&lat=43.6&a
                     let temperature = data.main.temp;
                     const name = data.name;
                     const coord = data.coord;
+                    let imgweather = data.weather[0].icon;
                 
                     
                     const pTempe = document.createElement("p");
+                    const pImg = document.createElement("img");
                     const pName = document.createElement("p");
                     const pLat = document.createElement("p");
                     const pLon = document.createElement("p");
@@ -36,6 +39,13 @@ const url = "https://api.openweathermap.org/data/2.5/weather?lon=1.44&lat=43.6&a
                 
 
                     pTempe.textContent = "Température : " + temperature + " °C";
+
+                    /*AJOUT Bonus 2 : Afficher à la place de la valeur du temps qu'il fait (weather.main) l'image correspondante (dans une balise image).
+                    Le nom de l'image est dans wheater.icon*/ 
+                    pImg.setAttribute('src',`https://openweathermap.org/img/wn/${imgweather}@2x.png`);
+                    
+
+                    
                     pName.textContent = "Nom de la ville : " + name;
                     pLat.textContent = "Latitude : " + coord.lat;
                     pLon.textContent = "Longitude : " + coord.lon;
@@ -45,6 +55,7 @@ const url = "https://api.openweathermap.org/data/2.5/weather?lon=1.44&lat=43.6&a
                     document.body.appendChild(pName);
                     document.body.appendChild(pLat);
                     document.body.appendChild(pLon);
+                    document.body.appendChild(pImg);
                 }
 
 
